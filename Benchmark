@@ -1,0 +1,15 @@
+library(readr)
+library(ggplot2)
+
+# URL del archivo en GitHub
+url <- "https://raw.githubusercontent.com/TU_USUARIO/TU_REPOSITORIO/main/Incites_CONICET_2019-2023.csv"
+
+# Cargar los datos desde el archivo en GitHub
+data <- read_csv(url)
+
+# Graficar la cantidad de documentos por año
+ggplot(data, aes(x = Publication.Year, y = `Web.of.Science.Documents`)) +
+  geom_line() +
+  geom_point() +
+  labs(x = "Año de Publicación", y = "Cantidad de Documentos",
+       title = "Cantidad de Documentos de Web of Science por Año")
